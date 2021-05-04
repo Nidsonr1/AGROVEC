@@ -7,14 +7,20 @@ module.exports = {
   async create(request, response, next) {
     const { name, email, password } = request.body;
 
-    const userAlready = await connection('users').where('email', email);
+    if(!name || !email || !password) {
+      return response.status(404).json({
+        message: 'Preencha todos os campos'
+      });
+    }
+
+    const userAlready = await connection('users').where('email', email).first();
 
     if(userAlready) {
       return response.status(401).json({
         message: 'Usuário já cadastrado',
         name,
         email,
-        password
+        password,
       });
     }
 
@@ -23,8 +29,8 @@ module.exports = {
     await connection('users').insert({ id, name, email, password });
 
     return response.status(202).json({
+      id,
       message: 'Usuário Cadastrado com Sucesso',
-      id
     });
   }
 }

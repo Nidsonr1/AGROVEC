@@ -6,6 +6,8 @@ exports.up = function(Knex) {
     table.string('name').notNullable();
     table.string('email').notNullable();
     table.string('password').notNullable();
+    
+  
   });
 };
 

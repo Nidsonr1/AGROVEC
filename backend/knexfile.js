@@ -1,7 +1,7 @@
 // Update with your config settings.
 const path = require('path');
 module.exports = {
-
+//Trocar o development para PostGress
   development: {
     client: 'sqlite3',
     connection: {

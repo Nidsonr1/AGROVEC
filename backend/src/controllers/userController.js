@@ -1,5 +1,6 @@
 const connection = require('../database/connection');
-const crypto = require('crypto');
+const dbModels = require("../Models/dbModels");
+const modelsUser = require('../Models/userModels');
 
 module.exports = {
   async register(request, response, next) {
@@ -11,25 +12,17 @@ module.exports = {
       });
     }
     
-    const userAlready = await connection('users').where('email', email).first();
-
-    if(userAlready) {
+    const alreadyUser = await modelsUser.alreadyUser(email, password);
+    
+    if(alreadyUser){
       return response.status(401).json({ 
         message: 'Usuário já cadastrado' 
       });
     }
 
-    const id = crypto.randomBytes(4).toString('HEX');
-
-    await connection('users').insert({ 
-      id, 
-      name, 
-      email, 
-      password 
-    });
+    const user = await modelsUser.registerUser(email, name, password);
 
     return response.status(202).json({
-      id,
       message: 'Usuário Cadastrado com Sucesso',
     });
   },
@@ -43,16 +36,13 @@ module.exports = {
       });
     }
 
-    const user = await connection('users')
-      .select('id', 'name')
-      .where({
-        'email': email,
-    }).first();
+    const alreadyUser = await modelsUser.alreadyUser(email, password);
 
-    if(!user) return response.status(404).json({ 
+    if(!alreadyUser) return response.status(404).json({ 
       message: 'Usuário não cadastrado' 
     });
     
+    const user = await modelsUser.login(email, password);
     return response.status(201).json({
       message: `Bem-vindo(a) ${user.name}`,
     });

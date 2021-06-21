@@ -1,8 +1,13 @@
 const express = require('express');
+
 const route = express.Router();
 
-route.get('/', (req, res, next) => {
-  res.send('testar');
-});
+const userControllers = require('./Controllers/userControllers');
+const profileControllers = require('./Controllers/profileControllers');
+
+route.post('/cadastro', userControllers.create);
+
+route.post('/login', profileControllers.index);
+route.get('/perfil/:id', profileControllers.show);
 
 module.exports = route;

@@ -1,12 +1,16 @@
 // Update with your config settings.
+const path = require('path');
 
 module.exports = {
-//Ajustar ambiente de dev para pg
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './dev.sqlite3'
-    }
+      filename: path.resolve(`${__dirname}`, 'src', 'database', 'db.sqlite')
+    },
+    migrations: {
+      directory: path.resolve('src', 'database', 'migrations')
+    },
+    useNullAsDefault: true,
   },
 
   staging: {

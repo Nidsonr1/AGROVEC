@@ -9,7 +9,6 @@ module.exports = {
     const {id, name} = await user.login({email, password});
 
     if(!id && !name) return res.status(400).json({ error: 'Credenciais Incorretas' });
-    console.log(id, name)
 
     return res.status(201).json({
       id,

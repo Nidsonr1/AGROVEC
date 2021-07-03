@@ -1,20 +1,20 @@
 import React from 'react';
+import './empresa.css'
+import Logo from '../../assets/img/LOGOAGROVEC.jpg';
 import { Link } from 'react-router-dom';
-import './style.css'
-import Logo from '../../assets/img/LOGOAGROVEC.jpg'
-import produtos from '../../assets/img/produtox.png'
+import fabrica from '../../assets/img/fabrica.jpg';
 import logofooter from '../../assets/img/logofooter.png'
 import { FiMapPin, FiMail, FiPhone, FiFacebook, FiInstagram } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
-import Logopng from '../../assets/img/agrovecpng.png'
+import certificado from '../../assets/img/certificado.png';
+import certificado123 from '../../assets/img/certificado123.jpg';
+import Carousel from 'react-bootstrap/Carousel';
 
 
-
-
-
-export default function Home() {
+export default function empresa() {
   return (
     <section>
+
       {/* NAVBAR */}
       <div className="divmae">
         {/* LOGO NAVBAR */}
@@ -38,79 +38,84 @@ export default function Home() {
         </nav>
       </div>
 
-      {/* APRESENTAÇÃO */}
-      <div className="apresentacao">
-        <h2>- Bem-vindo a Agrovec -</h2>
-        <h1>FÁBRICA DE RAÇÃO PARA ANIMAIS</h1>
-      </div>
-      {/* LOGO APRESENTAÇÃO */}
-      <div className="midpage">
-        <div className="logos">
-          <img src={Logopng} alt="" />
-        </div>
-        {/* TEXTO APRESENTAÇÃO */}
-        <div className="fabricacao">
-          <h2>Nossa Filosofia</h2>
-          <h1>FABRICAÇÃO COM EXELÊNCIA</h1>
+
+      {/* TEXTO APRESENTAÇÃO */}
+      <div className="midpageempresa">
+        <div className="fabricacaoempresa">
+          <h2>Nossa História</h2>
+          <h1>AGROVEC DO BRASIL</h1>
           <p>AGROVEC (Fábrica de alimentos para animais) visa a excelência<br></br>
             na prestação de serviços, inovação e satisfação dos clientes<br></br>
             assegurando nossa expansão e desenvolvimento.</p>
-          {/* BOTÃO APRESENTAÇÃO */}
-          <button className="button" type="subtmit">LEIA MAIS</button>
+        </div>
+      </div>
+      <hr />
+
+      {/* Certificado*/}
+
+      <div className="certificado">
+        <div className="txtcertificado">
+          <img src={certificado} alt="" />
+          <h1>NOSSOS CERTIFICADOS</h1>
+          <img src={certificado} alt="" />
+        </div>
+      </div>
+      <div className="certificados">
+        <img src={certificado123} alt="" />
+        <img src={certificado123} alt="" />
+        <img src={certificado123} alt="" />
+
+      </div>
+
+      {/* Historia */}
+      <div className="historiamae">
+        <div className="historia">
+          <h3>SOBRE A AGROVEC</h3>
+          <p className="paragrafo">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu laoreet diam. Etiam quis lacus ut risus scelerisque pellentesque at quis felis. Pellentesque at mauris in lectus varius laoreet. Nullam scelerisque dictum metus at dapibus. Proin pharetra feugiat dui, eget congue urna facilisis eu. Donec ornare, massa at lacinia mollis,
+            <br></br>
+            <br></br>
+            Proin eu ante lacus. In cursus nisl nulla, a euismod augue rutrum eget. Morbi efficitur ante eu bibendum viverra. Integer sollicitudin condimentum metus sed pharetra. Vestibulum porttitor velit magna, ut dapibus nulla pharetra et. Donec id libero nisi. Integer ornare, massa vitae tempor consectetur, diam mi varius mi, ut ultrices urna velit scelerisque lectus. Donec elementum gravida ligula eu vehicula.
+          </p>
+        </div>
+        <div className="imagem1">
+          <img src={fabrica} alt="" />
+        </div>
+
+        {/* Producao */}
+      </div>
+      <div className="producaomae">
+        <div className="imagem2">
+          <img src={fabrica} alt="" />
+        </div>
+        <div className="producao">
+
+          <h3>PRODUÇÃO</h3>
+          <p className="paragrafo">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu laoreet diam. Etiam quis lacus ut risus scelerisque pellentesque at quis felis. Pellentesque at mauris in lectus varius laoreet. Nullam scelerisque dictum metus at dapibus. Proin pharetra feugiat dui, eget congue urna facilisis eu. Donec ornare, massa at lacinia mollis,
+            <br></br>
+            <br></br>
+            Proin eu ante lacus. In cursus nisl nulla, a euismod augue rutrum eget. Morbi efficitur ante eu bibendum viverra. Integer sollicitudin condimentum metus sed pharetra. Vestibulum porttitor velit magna, ut dapibus nulla pharetra et. Donec id libero nisi. Integer ornare, massa vitae tempor consectetur, diam mi varius mi, ut ultrices urna velit scelerisque lectus. Donec elementum gravida ligula eu vehicula.
+          </p>
         </div>
       </div>
 
-      {/* PRODUTOS */}
-      <div className="produtos">
-        <h1>NOSSOS PRINCIPAIS PRODUTOS</h1>
-      </div>
-      {/* LISTA DE PRODUTOS */}
-      <div className="produtosv">
-        <div className="produto">
-          <img src={produtos} alt="" />
-          <h3>PRODUTO 1</h3>
-          <h4>Descrição do produto</h4>
-          <li>
-            <Link to="">Confira mais sobre ➔ </Link>
-          </li>
+      {/* Fábrica */}
+      <div className="fabricamae">
+        <div className="fabrica">
+          <h3>FÁBRICA</h3>
+          <p className="paragrafo">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu laoreet diam. Etiam quis lacus ut risus scelerisque pellentesque at quis felis. Pellentesque at mauris in lectus varius laoreet. Nullam scelerisque dictum metus at dapibus. Proin pharetra feugiat dui, eget congue urna facilisis eu. Donec ornare, massa at lacinia mollis,
+            <br></br>
+            <br></br>
+            Proin eu ante lacus. In cursus nisl nulla, a euismod augue rutrum eget. Morbi efficitur ante eu bibendum viverra. Integer sollicitudin condimentum metus sed pharetra. Vestibulum porttitor velit magna, ut dapibus nulla pharetra et. Donec id libero nisi. Integer ornare, massa vitae tempor consectetur, diam mi varius mi, ut ultrices urna velit scelerisque lectus. Donec elementum gravida ligula eu vehicula.
+          </p>
         </div>
-
-        <div className="produto">
-          <img src={produtos} alt="" />
-          <h3>PRODUTO 2</h3>
-          <h4>Descrição do produto</h4>
-          <li>
-            <Link to="">Confira mais sobre ➔  </Link>
-          </li>
-        </div>
-
-        <div className="produto">
-          <img src={produtos} alt="" />
-          <h3>PRODUTO 3</h3>
-          <h4>Descrição do produto</h4>
-          <li>
-            <Link to="">Confira mais sobre ➔ </Link>
-          </li>
-        </div>
-
-        {/* ENDPAGE */}
-      </div>
-      <div className="endpagemae">
-        <div className="endpage">
-          <div className="textos">
-            <h2>Diretamente da nossa fábrica</h2>
-            <p>"Todos os nossos produtos sempre passam por um longo, completo e primoroso<br></br> processo de produção, com objetivo de entregar sempre o melhor para<br></br> nossos clientes, e garantindo a  maior qualidade já vista no mercado."
-            </p>
-          </div>
-        </div>
-        <div class="textos2">
-          <h1>O MELHOR PARA O <br></br>
-            NOSSO CLIENTE!
-          </h1>
-          {/* BOTAO ENDPAGE */}
-          <button className="button1" type="subtmit">PRODUTOS</button>
+        <div className="imagem3">
+          <img src={fabrica} alt="" />
         </div>
       </div>
+
 
       {/* RODAPÉ*/}
       <div className="main-footer">
@@ -179,7 +184,7 @@ export default function Home() {
                       <a href="https://www.facebook.com/elojobimprove">
                         <FiFacebook
                           className="facebook-icon"
-                          size={40}/>                     
+                          size={40} />
                       </a>
                     </li>
                     <li>
@@ -213,7 +218,11 @@ export default function Home() {
       </div>
 
 
-    </section >
+    </section>
 
   )
+
+
+
+
 }

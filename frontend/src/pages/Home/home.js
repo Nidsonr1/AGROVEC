@@ -10,11 +10,12 @@ import Logopng from '../../assets/img/agrovecpng.png'
 
 
 
-
-
 export default function Home() {
+
   return (
+
     <section>
+
       {/* NAVBAR */}
       <div className="divmae">
         {/* LOGO NAVBAR */}
@@ -32,7 +33,7 @@ export default function Home() {
               <Link className="nav-link" to="/Empresa">EMPRESA</Link>
             </li>
             <li>
-              <Link className="nav-link" to="">CONTATO</Link>
+              <Link className="nav-link" to="/Contato">CONTATO</Link>
             </li>
           </ul>
         </nav>
@@ -93,6 +94,8 @@ export default function Home() {
           </li>
         </div>
 
+
+
         {/* ENDPAGE */}
       </div>
       <div className="endpagemae">
@@ -108,9 +111,11 @@ export default function Home() {
             NOSSO CLIENTE!
           </h1>
           {/* BOTAO ENDPAGE */}
-          <button className="button1" type="subtmit">PRODUTOS</button>
+          <button className="button2" type="subtmit">PRODUTOS</button>
         </div>
       </div>
+
+
 
       {/* RODAPÉ*/}
       <div className="main-footer">
@@ -179,7 +184,7 @@ export default function Home() {
                       <a href="https://www.facebook.com/elojobimprove">
                         <FiFacebook
                           className="facebook-icon"
-                          size={40}/>                     
+                          size={40} />
                       </a>
                     </li>
                     <li>

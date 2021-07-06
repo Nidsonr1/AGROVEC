@@ -16,10 +16,12 @@ export default function Home() {
 
     <section>
 
+<div style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url(https://i.pinimg.com/originals/21/1f/04/211f04d43dee3856c5c152d7b16d4a3c.jpg)`, width: "1351px", height: "658px" }}>
+
       {/* NAVBAR */}
       <div className="divmae">
         {/* LOGO NAVBAR */}
-        <img src={Logo} alt="" />
+        <img src={Logopng} alt="" />
         {/* MENU NAVBAR */}
         <nav className="container-nav">
           <ul>
@@ -216,7 +218,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+      </div>
 
     </section >
 

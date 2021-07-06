@@ -1,4 +1,3 @@
-const connection = require('../database/connection');
 const user = require('../Models/userModels')
 module.exports = {
   async create(req, res, next) {
@@ -21,15 +20,20 @@ module.exports = {
 
     if(userAlready) return res.status(400).json({ error: 'Usuário já cadastrado' });
 
+    const encrypt = await user.encryptPassword(password)
+    const salt = encrypt.encrypted.salt;
+    const passwordEncrypted = encrypt.encrypted.hash
+    
     user.registerUser({
       name,
       email,
-      password,
+      password: passwordEncrypted,
       cpf,
       address,
       zipCode,
       city,
       uf, 
+      salt
     });
 
     res.status(201).json({ msg: 'Usuário Cadastrado com Sucesso!' });

@@ -7,11 +7,12 @@ exports.up = function(knex) {
     table.string('name').notNullable();
     table.string('description').notNullable();
     table.float('price').notNullable();
-
-    
+    table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
+    table.timestamp('updated_at').notNullable().defaultTo(knex.fn.now());
   });
 };
 
 exports.down = function(knex) {
   return knex.schema.dropTable('products');
 };
+

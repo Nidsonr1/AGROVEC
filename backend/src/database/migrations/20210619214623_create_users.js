@@ -10,6 +10,7 @@ exports.up = function(knex) {
     table.string('zipCode').notNullable();
     table.string('city').notNullable();
     table.string('uf').notNullable();
+    table.string('salt').notNullable();
   });
 };
 

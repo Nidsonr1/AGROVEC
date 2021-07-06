@@ -6,14 +6,15 @@ module.exports = {
 
     if(!email || !password) return res.status(400).json({ error: 'Credenciais Incorretas' });
 
-    const {id, name} = await user.login({email, password});
+    const userAlready = await user.login({email, password});
+    // console.log(userAlready)
 
-    if(!id && !name) return res.status(400).json({ error: 'Credenciais Incorretas' });
+    // if(!userAlready.id && !userAlready.name) return res.status(400).json({ error: 'Credenciais Incorretas' });
 
-    return res.status(201).json({
-      id,
-      msg: `Bem-Vindo(a) ${name}`
-    });
+    // return res.status(201).json({
+    //   id: userAlready.id,
+    //   msg: `Bem-Vindo(a) ${userAlready.name}`
+    // });
   },
 
   async show(req, res, next) {

@@ -4,11 +4,10 @@ module.exports = {
   async index(req, res, next) {
     const { email, password } = req.body;
 
-    if(!email || !password) return res.status(400).json({ error: 'Credenciais Incorretas' });
+    if(!email || !password) return res.status(422).json({ error: 'Preencha Todos os Campos!' });
 
     const checkUser = await user.checkUserAlready(email);
     
-
     if(!checkUser) return res.status(400).json({error: 'Credenciais Incorretas'});
 
     const userAlready = await user.login({email, password});

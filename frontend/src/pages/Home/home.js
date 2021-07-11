@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './style.css'
+
+
+import NavBar from '../../assets/components/navBar';
+import './home.css';
+import Logopng from '../../assets/img/agrovecpng.png'
 import Logo from '../../assets/img/LOGOAGROVEC.jpg'
 import produtos from '../../assets/img/produtox.png'
-import logofooter from '../../assets/img/logofooter.png'
-import { FiMapPin, FiMail, FiPhone, FiFacebook, FiInstagram } from 'react-icons/fi'
-import { FaWhatsapp } from 'react-icons/fa'
-import Logopng from '../../assets/img/agrovecpng.png'
-
+import Footer from '../../assets/components/footer';
 
 
 export default function Home() {
@@ -16,30 +16,9 @@ export default function Home() {
 
     <section>
 
-<div style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url(https://i.pinimg.com/originals/21/1f/04/211f04d43dee3856c5c152d7b16d4a3c.jpg)`, width: "1351px", height: "658px" }}>
-
+<div className="backGround">
       {/* NAVBAR */}
-      <div className="divmae">
-        {/* LOGO NAVBAR */}
-        <img src={Logopng} alt="" />
-        {/* MENU NAVBAR */}
-        <nav className="container-nav">
-          <ul>
-            <li>
-              <Link className="nav-link" to="">INÍCIO</Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="">PRODUTOS</Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="/Empresa">EMPRESA</Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="/Contato">CONTATO</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+     <NavBar cor="#fff"/>
 
       {/* APRESENTAÇÃO */}
       <div className="apresentacao">
@@ -119,107 +98,10 @@ export default function Home() {
 
 
 
-      {/* RODAPÉ*/}
-      <div className="main-footer">
-        <div className="container-footer">
-          <div className="row">
-            {/* coluna 0 */}
-            <div className="col">
-              <h4 className="list-unstyled">
-                <img src={logofooter} alt="" />
-                <li className="endereco">
-                  <FiMapPin size={25} color="b87333" style={{ padding: 5 }} />
-                  AV. Davi Araújo Nobre – 45
-                  <li className="bairro">Barro Branco. Crato-CE</li>
-                </li>
-                <li className="email">
-                  <FiMail size={25} color="b87333" style={{ padding: 5 }} />
-                  agrovecdobrasil@gmail.com
-                </li>
-              </h4>
-            </div>
-            {/* coluna 1 */}
-            <div className="col">
-              <ui className="list-unstyled">
-                <div className="contatos">
-                  <li className="numero">
-                    <FiPhone size={65} color="b87333" style={{ paddingRight: 13, marginTop: 12, }} />
-                    Fábrica<br></br>
-                    (88)99999-9999
-                  </li>
-                  <li className="numero">
-                    <FaWhatsapp size={70} color="b87333" style={{ padding: 10, marginLeft: -10 }} />
-                    WhatsApp<br></br>
-                    (88)99999-9999
-                  </li>
-                </div>
-              </ui>
-            </div>
-            {/* coluna 2 */}
-            <div className="col">
-              <ui className="list-unstyled">
-                <div className="bar">
-                  <ul>
-                    <li>
-                      <Link>INÍCIO</Link>
-                    </li>
-                    <li>
-                      <Link>PRODUTOS</Link>
-                    </li>
-                    <li>
-                      <Link to="/Empresa">EMPRESA</Link>
-                    </li>
-                    <li>
-                      <Link>CONTATO</Link>
-                    </li>
-                  </ul>
-                </div>
-              </ui>
-            </div>
-            {/* Coluna 3 */}
-            <div className="col-3">
-              <h5>SIGA NOSSAS<br></br> REDES SOCIAIS</h5>
-              <ui className="list-unstyled">
-                <div className="redesociais">
-                  <ul>
-                    <li>
-                      <a href="https://www.facebook.com/elojobimprove">
-                        <FiFacebook
-                          className="facebook-icon"
-                          size={40} />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <FiInstagram className="instagram-icon" size={40} />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <FiMail className="email-icon" size={40} />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <FaWhatsapp className="whatsapp-icon" size={40} />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </ui>
-            </div>
-          </div>
-          {/* DIREITOS RESERVADOS */}
-          <hr />
-          <div className="row">
-            <p className="col-sm" style={{ textAlign: 'center' }}>
-              ©2021 Agrovec do Brasil. Todos os direitos reservados.
-            </p>
-          </div>
-        </div>
-      </div>
-      </div>
-
+      <footer>
+        <Footer/>
+      </footer>
+    </div>
     </section >
 
   )

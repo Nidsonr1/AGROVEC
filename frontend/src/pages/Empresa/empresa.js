@@ -1,43 +1,24 @@
 import React from 'react';
-import './empresa.css'
-import Logo from '../../assets/img/LOGOAGROVEC.jpg';
 import { Link } from 'react-router-dom';
-import fabrica from '../../assets/img/fabrica.jpg';
-import logofooter from '../../assets/img/logofooter.png'
-import { FiMapPin, FiMail, FiPhone, FiFacebook, FiInstagram } from 'react-icons/fi'
-import { FaWhatsapp } from 'react-icons/fa'
-import certificado from '../../assets/img/certificado.png';
-import certificado123 from '../../assets/img/certificado123.jpg';
+import { FiMapPin, FiMail, FiPhone, FiFacebook, FiInstagram } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 import Carousel from 'react-bootstrap/Carousel';
 
+import './empresa.css';
+import NavBar from '../../assets/components/navBar'
+import fabrica from '../../assets/img/fabrica.jpg';
+import logofooter from '../../assets/img/logofooter.png'
+import certificado from '../../assets/img/certificado.png';
+import certificado123 from '../../assets/img/certificado123.jpg';
+
+import Logo from '../../assets/img/LOGOAGROVEC.jpg';
 
 export default function empresa() {
   return (
     <section>
-
       {/* NAVBAR */}
-      <div className="divmae">
-        {/* LOGO NAVBAR */}
-        <img src={Logo} alt="" />
-        {/* MENU NAVBAR */}
-        <nav className="container-nav">
-          <ul>
-            <li>
-              <Link className="nav-link" to="">INÍCIO</Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="">PRODUTOS</Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="/Empresa">EMPRESA</Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="">CONTATO</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
+     
+      <NavBar/>
 
       {/* TEXTO APRESENTAÇÃO */}
       <div className="midpageempresa">

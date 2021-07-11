@@ -5,7 +5,8 @@ import Produtos from './pages/Produtos/produtos';
 import Contato from './pages/Contato/contato';
 import Empresa from './pages/Empresa/empresa';
 import Login from './pages/Usuario/login';
-import Register from './pages/Usuario/register'
+import Cadastro from './pages/Usuario/cadastro';
+import Perfil from './pages/Usuario/perfil';
 
 export default function Routes() {
   return(
@@ -16,7 +17,8 @@ export default function Routes() {
       <Route path="/empresa" component={Empresa}/>
       <Route path="/contato" component={Contato}/> 
       <Route path="/login" component={Login}/>
-      <Route path="/register" component={Register}/>  
+      <Route path="/register" component={Cadastro}/>  
+      <Route path="/perfil" component={Perfil} />
     </Switch>
   </BrowserRouter>
   );

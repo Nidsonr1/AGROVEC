@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import Logopng from '../../assets/img/agrovecpng.png'
 
 export default function NavBar(props) {

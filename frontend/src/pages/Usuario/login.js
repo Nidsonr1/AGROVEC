@@ -1,28 +1,35 @@
 import {React, useState} from 'react'; 
 import { MdEmail, MdLock } from "react-icons/md";
-import api from '../../services/api'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import api from '../../services/api';
+import 'react-toastify/dist/ReactToastify.minimal.css';
 import "./css/login.css";
 import { Link, useHistory } from 'react-router-dom';
 
 export default function Register() {
   const [email, setEmail] = useState('');
   const[password, setPassword] = useState('');
-
+  toast.configure()
   const history = useHistory();
+
 
   async function handleLogin(e) {
     e.preventDefault();
-
+    
     try { 
       const response = await api.post('/user/login', {email, password});
-
-      localStorage.setItem('userId', response.data.id)
-      localStorage.setItem('userName', response.data.name)
       
-      alert(response.data.msg)
+      localStorage.setItem('userId', response.data.id);
+      localStorage.setItem('userName', response.data.name);
+      localStorage.setItem('sessionToken', response.data.token);
+
+      toast.success(`${response.data.msg}`, {
+        style: { background: 'forestgreen' }
+      })
       history.push('/');
     } catch (error) {
-      alert(`[${error.response.status}] ${error.response.data.error}`)
+      toast.error(`${error.response.data.error}`)
     }
   }
 

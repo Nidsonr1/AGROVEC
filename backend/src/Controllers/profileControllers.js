@@ -17,6 +17,7 @@ module.exports = {
     return res.status(201).json({
       id: userAlready.id,
       name: userAlready.name,
+      token: userAlready.sessionToken,
       msg: `Bem-Vindo(a) ${userAlready.name}`
     });
   },

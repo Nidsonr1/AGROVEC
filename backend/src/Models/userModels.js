@@ -41,9 +41,11 @@ module.exports = {
 
     const descryptedPassword = await this.hash(data.password, userAlready.salt);
 
+    const sessionToken = crypto.randomBytes(32).toString('HEX');
+
     if(userAlready.password === descryptedPassword.hash) {
       const { id, name } = userAlready;
-      return { id, name };
+      return { id, name, sessionToken };
     }
 
     return false;

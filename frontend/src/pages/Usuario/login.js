@@ -7,8 +7,6 @@ import api from '../../services/api';
 import "./css/login.css";
 import { Link, Redirect, useHistory } from 'react-router-dom';
 
-import userFunctions from '../../assets/functions/userFunctions';
-// import handleLogin from '../../assets/functions/userFunctions';
 
 export default function Register() {
   const[email, setEmail] = useState('');
@@ -16,19 +14,30 @@ export default function Register() {
   toast.configure();
   const history = useHistory();
 
+  async function handleLogin(e) {
+    e.preventDefault();
+    try { 
+      const response = await api.post('/user/login', {email, password});
+      
+      localStorage.setItem('userId', response.data.id);
+      localStorage.setItem('userName', response.data.name);
+      localStorage.setItem('sessionToken', response.data.token);
+
+      toast.success(`Seja bem-vindo(a) ${response.data.name}`, {
+        style: { background: 'forestgreen' }
+      })
+      history.push('/')
+    } catch (error) {
+       toast.error(`${error.response.data.error}`)
+    }
+  }
+
   return (
     <section>
       <div className="backGround">
         <div className="loginmae">
           <div className="login">
-           <form onSubmit={(e) => {
-              e.preventDefault();
-              const res = userFunctions.handleLogin(email, password);
-              if(res) {
-                <Redirect to="../Home/home.js" />
-              }
-              }
-            }>
+           <form onSubmit={handleLogin}>
            <h1>LOGIN</h1>
             <div className="loginInputEmail">
               <MdEmail />

@@ -8,17 +8,16 @@ module.exports = {
 
     const checkUser = await user.checkUserAlready(email);
     
-    if(!checkUser) return res.status(400).json({error: 'Credenciais Incorretas'});
+    if(!checkUser) return res.status(400).json({error: 'Email não encontrado! Verifique o email ou cadastre-se no sistema'});
 
     const userAlready = await user.login({email, password});
 
-    if((!userAlready.id || null) && (!userAlready.name || null)) return res.status(400).json({ error: 'Credenciais Incorretas' });
+    if((!userAlready.id || null) && (!userAlready.name || null)) return res.status(400).json({ error: 'Senha Incorreta! Verifique e tente novamente' });
 
     return res.status(201).json({
       id: userAlready.id,
       name: userAlready.name,
-      token: userAlready.sessionToken,
-      msg: `Bem-Vindo(a) ${userAlready.name}`
+      token: userAlready.sessionToken
     });
   },
 

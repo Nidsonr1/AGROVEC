@@ -5,7 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'react-toastify/dist/ReactToastify.minimal.css';
 import api from '../../services/api';
 import "./css/login.css";
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import errors from '../../assets/components/error';
 
 
 export default function Register() {
@@ -22,13 +23,16 @@ export default function Register() {
       localStorage.setItem('userId', response.data.id);
       localStorage.setItem('userName', response.data.name);
       localStorage.setItem('sessionToken', response.data.token);
+      errors.success(`Seja bem-vindo(a), ${response.data.name}`)
 
-      toast.success(`Seja bem-vindo(a) ${response.data.name}`, {
-        style: { background: 'forestgreen' }
-      })
-      history.push('/')
+      history.push('/');
     } catch (error) {
-       toast.error(`${error.response.data.error}`)
+      if(!error.response) {
+       errors.error((' Problemas no Servidor!'))
+      } else {
+        errors.error(error.response.data.error)
+      }
+     
     }
   }
 

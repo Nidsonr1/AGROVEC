@@ -6,7 +6,7 @@ export default function NavBar(props) {
   return(
     <div className="divmae">
     {/* LOGO NAVBAR */}
-    <img src={Logopngwhite} alt="" />
+    <img src={props.image} alt="" />
     {/* MENU NAVBAR */}
     <nav className="container-nav">
       <ul>

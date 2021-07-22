@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import logofooter from '../../assets/img/logofooter.png';
 import { FiMapPin, FiMail, FiPhone, FiFacebook, FiInstagram } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
+import NavBar from "../../assets/components/navBar";
 
 
 
@@ -16,26 +17,8 @@ export default function Contato() {
     <section>
 
       {/* NAVBAR */}
-      <div className="divmae">
-        <img src={Logo} alt="" />
-        <nav className="container-nav">
-          <ul>
-            <li>
-              <Link className="nav-link" to="">INÍCIO</Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="">PRODUTOS</Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="/Empresa">EMPRESA</Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="/Contato">CONTATO</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
+      <NavBar image={Logo}/>
+    
       {/* TÍTULO */}    
         <div className="titulo">
           <h1>PERGUNTAS FREQUENTES</h1>

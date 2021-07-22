@@ -7,7 +7,8 @@ import fabrica from '../../assets/img/fabrica.jpg';
 import logofooter from '../../assets/img/logofooter.png'
 import certificado from '../../assets/img/certificado.png';
 import certificado123 from '../../assets/img/certificado123.jpg';
-import Logopng from '../../assets/img/agrovecpng.png'
+import Logopng from '../../assets/img/agrovecpng.png';
+import NavBar from "../../assets/components/navBar";
 
 
 export default function empresa() {
@@ -17,25 +18,7 @@ export default function empresa() {
    <div className="fachada">
       {/* NAVBAR */}
 
-      <div className="divmae">
-        <img src={Logopng} alt="" />
-        <nav className="container-nav">
-          <ul>
-            <li>
-              <Link className="nav-link" to="">INÍCIO</Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="">PRODUTOS</Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="/Empresa">EMPRESA</Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="/Contato">CONTATO</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <NavBar image={Logopng}/>
 
 
       {/* TEXTO APRESENTAÇÃO */}

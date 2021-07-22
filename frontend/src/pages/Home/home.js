@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../../assets/components/navBar';
 import './home.css';
-import Logopng from '../../assets/img/agrovecpng.png'
-import produtos from '../../assets/img/produtox.png'
+import Logopng from '../../assets/img/agrovecpng.png';
+import produtos from '../../assets/img/produtox.png';
 import Footer from '../../assets/components/footer';
+import Logopngwhite from '../../assets/img/agrovecpngwhite.png';
 
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
 
       <div className="backGround">
         {/* NAVBAR */}
-        <NavBar cor="#fff" />
+        <NavBar image={Logopngwhite} cor="#fff" />
 
         {/* APRESENTAÇÃO */}
         <div className="apresentacao">

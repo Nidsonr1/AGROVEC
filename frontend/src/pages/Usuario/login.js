@@ -1,35 +1,38 @@
 import {React, useState} from 'react'; 
 import { MdEmail, MdLock } from "react-icons/md";
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
-import api from '../../services/api';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import 'react-toastify/dist/ReactToastify.minimal.css';
+import api from '../../services/api';
 import "./css/login.css";
 import { Link, useHistory } from 'react-router-dom';
+import errors from '../../assets/components/error';
+
 
 export default function Register() {
-  const [email, setEmail] = useState('');
+  const[email, setEmail] = useState('');
   const[password, setPassword] = useState('');
-  toast.configure()
+  toast.configure();
   const history = useHistory();
-
 
   async function handleLogin(e) {
     e.preventDefault();
-    
     try { 
       const response = await api.post('/user/login', {email, password});
       
       localStorage.setItem('userId', response.data.id);
       localStorage.setItem('userName', response.data.name);
       localStorage.setItem('sessionToken', response.data.token);
+      errors.success(`Seja bem-vindo(a), ${response.data.name}`)
 
-      toast.success(`${response.data.msg}`, {
-        style: { background: 'forestgreen' }
-      })
       history.push('/');
     } catch (error) {
-      toast.error(`${error.response.data.error}`)
+      if(!error.response) {
+       errors.error((' Problemas no Servidor!'))
+      } else {
+        errors.error(error.response.data.error)
+      }
+     
     }
   }
 

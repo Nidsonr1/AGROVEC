@@ -2,23 +2,41 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiMapPin, FiMail, FiPhone, FiFacebook, FiInstagram } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
-import Carousel from 'react-bootstrap/Carousel';
-
 import './empresa.css';
-import NavBar from '../../assets/components/navBar'
 import fabrica from '../../assets/img/fabrica.jpg';
 import logofooter from '../../assets/img/logofooter.png'
 import certificado from '../../assets/img/certificado.png';
 import certificado123 from '../../assets/img/certificado123.jpg';
+import Logopng from '../../assets/img/agrovecpng.png'
 
-import Logo from '../../assets/img/LOGOAGROVEC.jpg';
 
 export default function empresa() {
   return (
     <section>
+
+   <div className="fachada">
       {/* NAVBAR */}
-     
-      <NavBar/>
+
+      <div className="divmae">
+        <img src={Logopng} alt="" />
+        <nav className="container-nav">
+          <ul>
+            <li>
+              <Link className="nav-link" to="">INÍCIO</Link>
+            </li>
+            <li>
+              <Link className="nav-link" to="">PRODUTOS</Link>
+            </li>
+            <li>
+              <Link className="nav-link" to="/Empresa">EMPRESA</Link>
+            </li>
+            <li>
+              <Link className="nav-link" to="/Contato">CONTATO</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
 
       {/* TEXTO APRESENTAÇÃO */}
       <div className="midpageempresa">
@@ -30,7 +48,7 @@ export default function empresa() {
             assegurando nossa expansão e desenvolvimento.</p>
         </div>
       </div>
-      <hr />
+     
 
       {/* Certificado*/}
 
@@ -162,7 +180,7 @@ export default function empresa() {
                 <div className="redesociais">
                   <ul>
                     <li>
-                      <a href="https://www.facebook.com/elojobimprove">
+                      <a href="">
                         <FiFacebook
                           className="facebook-icon"
                           size={40} />
@@ -198,7 +216,7 @@ export default function empresa() {
         </div>
       </div>
 
-
+</div>
     </section>
 
   )

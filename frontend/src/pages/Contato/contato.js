@@ -27,10 +27,10 @@ export default function Contato() {
               <Link className="nav-link" to="">PRODUTOS</Link>
             </li>
             <li>
-              <Link className="nav-link" to="">EMPRESA</Link>
+              <Link className="nav-link" to="/Empresa">EMPRESA</Link>
             </li>
             <li>
-              <Link className="nav-link" to="">CONTATO</Link>
+              <Link className="nav-link" to="/Contato">CONTATO</Link>
             </li>
           </ul>
         </nav>

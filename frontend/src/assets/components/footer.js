@@ -30,12 +30,12 @@ export default function Footer() {
                 <ui className="list-unstyled">
                   <div className="contatos">
                     <li className="numero">
-                      <FiPhone size={65} color="b87333" style={{ paddingRight: 13, marginTop: 12, }} />
+                      <FiPhone size={70} color="b87333" style={{ padding: 10, marginTop: 5,marginLeft: -16 }} />
                       Fábrica<br></br>
                       (88)99999-9999
                     </li>
                     <li className="numero">
-                      <FaWhatsapp size={70} color="b87333" style={{ padding: 10, marginLeft: -10 }} />
+                      <FaWhatsapp size={70} color="b87333" style={{ padding: 10, marginLeft: -16 }} />
                       WhatsApp<br></br>
                       (88)99999-9999
                     </li>

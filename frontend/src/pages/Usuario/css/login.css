@@ -1,17 +1,16 @@
 .loginmae {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
-  color:white;
+  color: white;
 }
 
-.login { 
-  background-color:#008000;
+.login {
+  background-color: #008000;
   border-radius: 20px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -23,12 +22,14 @@
   font-family: 'Anton', sans-serif;
   font-size: 40px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .login h4 {
   font-family: 'Anton', sans-serif;
+  text-align: center;
   font-weight: 300;
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 20px;
   font-weight: 500;
   color: #e8f0fe;
@@ -62,7 +63,7 @@
   color: black;
   border: none;
   font-size: 17px;
-  margin-left: 10px;
+  margin-left: 12px;
   margin-right: 10px;
 }
 
@@ -70,10 +71,9 @@
   display: flex;
   align-items: center;
   color: gray;
-  background-color:#e8f0fe;
-  border-radius: 3px;
+  background-color: #e8f0fe;
+  border-radius: 5px;
   padding: 3px;
-  margin: 5px;
   width: 98%;
   height: 50px;
   margin-top: 10px;
@@ -88,7 +88,6 @@
 .loginInputPassword input {
   background: transparent;
   width: 100%;
-  outline-width: 0;
   color: black;
   border: none;
   font-size: 17px;
@@ -98,15 +97,14 @@
 
 .login button {
   width: 98%;
-  background-color:#00a000;
+  background-color: #00a000;
   color: #EFF2F5;
   font-weight: 800;
   height: 50px;
   border-radius: 5px;
   font-size: 18px;
-  margin-top: 5px;
+  margin-top: 10px;
   border: none;
-  outline-width: 0;
 }
 
 .login button:hover {
@@ -115,15 +113,18 @@
   cursor: pointer;
 }
 
-.link{
-padding-top: 17px;
-  font-size: 15px;
+.link {
+  padding-top: 17px;
+  margin-left: 100px;
+  text-align: center;
   text-decoration: none;
   transition: filter 0.10s;
-  color:#EFF2F5 ;
+  color: #EFF2F5;
+  padding-left: 20px;
 }
 
 .link:hover {
   filter: brightness(110%);
   color: #EFF2F5;
 }
+

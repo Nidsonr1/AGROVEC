@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logopng from '../../assets/img/agrovecpng.png'
+import Logopngwhite from '../../assets/img/agrovecpngwhite.png'
 
 export default function NavBar(props) {
   return(
     <div className="divmae">
     {/* LOGO NAVBAR */}
-    <img src={Logopng} alt="" />
+    <img src={Logopngwhite} alt="" />
     {/* MENU NAVBAR */}
     <nav className="container-nav">
       <ul>
@@ -14,7 +14,7 @@ export default function NavBar(props) {
           <Link 
             className="nav-link" 
             style={{ color: props.cor }} 
-            to="/">INÍCIO</Link>
+            to="">INÍCIO</Link>
         </li>
         <li>
           <Link 

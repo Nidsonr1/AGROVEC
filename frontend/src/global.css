@@ -27,3 +27,11 @@ h2{
   background-position: center;
   background-image: url('https://i.pinimg.com/originals/21/1f/04/211f04d43dee3856c5c152d7b16d4a3c.jpg');
 }
+
+.fachada {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../src/assets/img/fachada.png');
+}
